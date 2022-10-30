@@ -62,36 +62,50 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
-/*
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: center;
-*/
 }
 
 h1.logo {
   position: relative;
-  margin: 0.3em 0;
+  width: 210px;
+  margin: 0.3em 0 0.3em 12px;
+  text-align: right;
 }
-h1.logo > span.studio {
+h1.logo > span.ballet, .ballet1 {
   font-family: English;
   font-size: 72px;
   font-weight: normal;
   letter-spacing: -3px;
   color: #d12329; /* red */
   z-index: 2;
-  position: relative;
   left: 18px;
+
+  text-shadow: 0 0 1px white;
+
+  position: absolute;
+  top: 10px;
+  left: 125px;
 }
-h1.logo > span.twobor {
-  position: relative;
-  left: -4px;
+.ballet1 {
+  font-weight: bold;
+  color: white;
+}
+h1.logo > span.adult,
+h1.logo > span.community {
   font-family: Cafeta;
   font-size: 56px;
   font-weight: normal;
   color: black;
   z-index: 1;
+
+
+  position: relative;
+}
+h1.logo > span.adult {
+  left: -20px;
+  top: -7px;
+}
+h1.logo > span.community {
+  top: 0px;
 }
 
 div.centre {
@@ -99,7 +113,8 @@ div.centre {
 }
 
 div.floatingPara {
-  width: fit-content;
+width: 300px;
+//  width: fit-content;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 0 5px 2px #aeaeae;
@@ -140,9 +155,37 @@ div.floatingPara {
 
 div.section > h1.sectionTitle {
   font-family: Barkelia;
+  display: inline-block;
   font-size: 4em;
   padding: 0 0 0 20px;
   margin: 0;
+}
+div.section.schedule > p {
+  position: relative;
+  display: inline-block;
+  font-family: Barkelia;
+
+  margin-left: 1em;
+  font-size: 2em;
+}
+div.section.schedule > select {
+  font-family: Cafeta;
+  display: inline-block;
+
+  margin-left: 1em;
+  font-size: 2em;
+  height: 2em;
+  padding: 0;
+}
+
+div.section.schedule > p.currency {
+//  position: absolute;
+  align-self: right;
+  right: 0;
+  text-align: left;
+  font-family: Lato;
+  font-weight: normal;
+  font-size: 18px;
 }
 
 table.schedule {
@@ -167,7 +210,7 @@ table.schedule th.teacher {
   text-align: center;
   font-family: Lato;
   font-size: 2em;
-  background-color: pink;
+  background-color: hsl(0deg 100% 88%);
   color: white;
   text-shadow: 0 0 10px #9e4d5c;
 }
@@ -177,16 +220,29 @@ table.schedule th.day {
   padding-top: 15px;
   font-weight: bold;
   font-size: 1.1em;
+ 
 }
+table.schedule th.day > * {
+  //text-decoration: underline;
+}
+
 table.schedule td.time {
 
 }
 table.schedule td.studio {
-
+  cursor: pointer;
 }
 table.schedule td.level {
 
 }
 table.schedule td.cost {
 
+}
+
+a, a:visited, a:hover, a:active {
+  color: blue;
+}
+
+.noBold {
+  font-weight: normal;
 }
