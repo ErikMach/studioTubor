@@ -1,5 +1,6 @@
 {
   "background_color": "pink",
+  "theme_color": "pink",
   "description": "A community noticeboard for Adult Ballet classes in Sydney.",
   "display": "fullscreen",
   "icons": [
