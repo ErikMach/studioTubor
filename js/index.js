@@ -1,3 +1,9 @@
+if (window.Notification) {
+  if (Notification.permission !== "granted" {
+    Notification.requestPermission();
+  }
+}
+
 const scheduleCont = document.getElementsByClassName("schedule")[0];
 const selectMenu = document.getElementById("scheduleSelect");
 
