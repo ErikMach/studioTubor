@@ -3,8 +3,8 @@ const scheduleCont = document.getElementsByClassName("schedule")[0];
 const c = (tag, attrs = {}, children = []) => {
   const elem = document.createElement(tag);
   for (const [attr, value] of Object.entries(attrs)) {
-    if (attr === "textContent") {
-      elem.textContent = value;
+    if (["textContent", "innerHTML", "outerHTML"].includes(attr)) {
+      elem[attr] = value;
     } else {
       elem.setAttribute(attr, value);
     }
@@ -22,8 +22,33 @@ const days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Satday",  
+  "Saturday",  
 ];
+
+// Equates arrays of strings
+const arrayOfStrEq = (arr1, arr2) => {
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+    console.error("Non-array passed to array equator", arr1, arr2);
+    return false;
+  }
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i=0; i<arr1.length; i++) {
+    if (typeof arr1[i] !== "string") {
+      console.error("Non-string-array", arr1);
+      return false;
+    }
+    if (typeof arr2[i] !== "string") {
+      console.error("Non-string-array", arr2);
+      return false;
+    }
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+};
 
 // Converts 24hr time to am/pm time
 const timeConvert = (time) => {
@@ -41,35 +66,32 @@ const writeTimeRange = (timeRange) => {
   return `${timeConvert(timeRange.start)} - ${timeConvert(timeRange.end)}`;
 };
 
-const createSchedule = () => {
+
+const createScheduleTeacher = () => {
   const table = c("table", {class: "schedule"});
 
+  let i = -1;
   for (const [teacher, classes] of Object.entries(schedule)) {
+    i++;
     const titleRow = c("tr", {class: "newSet"}, [
-      c("th", {class: "teacher", colspan: 4, textContent: teacher})
+      c("th", {class: "teacher", colspan: 4, textContent: teacher, style: `background-color:hsl(${i * 0}deg 100% 88%)`})
     ]);
     table.appendChild(titleRow);
 
     classes.forEach((classe, i) => {
+      if (classes[i-1]?.day !== classe.day || !arrayOfStrEq(classes[i-1]?.dates, classe.dates)) {
+        let datesStr = days[classe.day] + "s" + "&emsp;<span class='noBold'>(";
+        datesStr += (classe.dates.length === 1) ? `from ${classe.dates[0].split(/\./g).join("/")}` : `${classe.dates[0].split(/\./g).join("/")} to ${classe.dates[classe.dates.length-1].split(/\./g).join("/")}`;
+        datesStr += ")</span>";
 
-      const date =  new Date(`20${classe.dates[0].split(/\./g).reverse().join("-")}T${classe.time.start.toString().slice(0, 2)}:${classe.time.start.toString().slice(2)}:00`);
-
-      const subTitleRow = c("tr", {}, [
-	c("th", {class: "day", colspan: 4, textContent: days[date.getDay()] + "s"})
-      ]);
-      table.appendChild(subTitleRow);
-
-/*
-      classe.dates.forEach(date => {
-	const dateRow = c("tr", {colspan: 4}, [
-	  c("th", {class: "dates", textContent: date.split(/\./g).join("/")})
-	]);
-	table.appendChild(dateRow);
-      });
-*/
+        const subTitleRow = c("tr", {}, [
+	  c("th", {class: "day", colspan: 4, innerHTML: datesStr})
+        ]);
+        table.appendChild(subTitleRow);
+      }
       const infoRow = c("tr", {class: i===classes.length-1 ? "newSet" : ""}, [
 	c("td", {class: "time", textContent: writeTimeRange(classe.time)}),
-	c("td", {class: "studio", textContent: classe.studio}),
+	c("td", {class: "studio", innerHTML: `<a href="${studios[classe.studio].mapLink}" target="_blank">${classe.studio}</a>`, title: studios[classe.studio].address}),
 	c("td", {class: "level", textContent: classe.classType}),
 	c("td", {class: "cost", textContent: "$" + classe.cost}),
       ]);
@@ -80,4 +102,4 @@ const createSchedule = () => {
   scheduleCont.appendChild(table);
 };
 
-createSchedule();
+createScheduleTeacher();
