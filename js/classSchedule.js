@@ -1,9 +1,10 @@
 const schedule = {
   "Fenella": [
     { // Mondays
+      day: 1,
       studio: "Dance102",
       classType: "B/E",
-      cost: "",
+      cost: 25,
       time: {
 	start: 1000,
 	end: 1130
@@ -15,9 +16,10 @@ const schedule = {
       ]
     },
     { // Thursdays
+      day: 4,
       studio: "Dance102",
       classType: "First Steps Centre & Pointe",
-      cost: "",
+      cost: 25,
       time: {
 	start: 1900,
 	end: 2100
@@ -29,9 +31,39 @@ const schedule = {
       ]
     }
   ],
-
+  "Ellena": [
+    { // Tuesdays
+      day: 2,
+      studio: "Dance102",
+      classType: "B/E",
+      cost: 25,
+      time: {
+	start: 1900,
+	end: 2030
+      },
+      dates: [
+	"01.11.22",
+	"20.12.22"
+      ]
+    },
+    { // Tuesdays
+      day: 2,
+      studio: "Dance102",
+      classType: "Beginner Pointe",
+      cost: 15,
+      time: {
+	start: 2030,
+	end: 2100
+      },
+      dates: [
+	"01.11.22",
+	"20.12.22"
+      ]
+    },
+  ],
   "Mitch": [
     { // Mondays
+      day: 1,
       studio: "Dance102",
       classType: "B/E",
       cost: 20,
@@ -51,6 +83,7 @@ const schedule = {
       ]
     },
     { // Wednesdays
+      day:3,
       studio: "Dance102",
       classType: "B/E",
       cost: 20,
@@ -70,6 +103,21 @@ const schedule = {
 	"28.12.22"
       ]
     },
+  ],
+  "Fabio": [
+    { // Saturdays
+      day: 6,
+      studio: "Evolution",
+      classType: "Beg/Int",
+      cost: 22,
+      time: {
+	start: 1130,
+	end: 1300
+      },
+      dates: [
+	"05.11.22"
+      ]
+    },
   ]
 };
 
@@ -79,9 +127,9 @@ const studios = {
     mapLink: "https://goo.gl/maps/M5HZtic5qryAez4DA",
     phone: "(02) 9437 3900"
   },
-  "Evolution Performance Centre": {
+  "Evolution": {
     address: "1/15 Falcon St, Crows Nest",
-    mapLink: "https://maps.app.goo.gl/JsF8RcD1rySwb6Kj6",
+    mapLink: "https://goo.gl/maps/88ShHQQw6Bd3R2LM7",
     phone: "0433 124 068"
   }
 };
@@ -95,4 +143,16 @@ const classTypes = {
     fullName: "Beginner/Elementry",
     description: "For medium-ability dancers"
   }
+};
+
+const teachers = {
+  "Fenella": {
+    fullName: "",
+    image: "",
+    pricePerClass: 25,
+    paymentMethod: "cash"
+  },
+  "Ellena": {},
+  "Fabio": {},
+  "Mitch": {}
 };
