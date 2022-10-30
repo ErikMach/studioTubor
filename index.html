@@ -2,18 +2,22 @@
 <html lang="en">
   <head>
     <title>ABC | Adult Ballet Community</title>
+    <link rel="icon" type="ico" href="./res/img/ABC_icon.ico">
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="manifest.webmanifest">
 
     <link rel="preload" href="./css/index.css" as="style">
     <link rel="preload" href="./res/fonts/english/English.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./res/fonts/cafeta/Cafeta.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./res/fonts/lato/Lato.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./res/fonts/barkelia/Barkelia.ttf" as="font" type="font/ttf" crossorigin>
-
     <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <link rel="icon" type="ico" href="./res/img/ABC_icon.ico">
+
     <script src="./js/classSchedule.js"></script>
+    <script src="./js/initSW.js"></script>
   </head>
   <body>
 
@@ -22,19 +26,21 @@
 	<h1 class="logo"><span class="adult">ADULT</span><span class="ballet1">Ballet</span><span class="ballet">Ballet</span><br><span class="community">COMMUNITY</span></h1>
       </div>
       <div class="centre floatingPara textHolder">
-	<p>The purpose of this website is to act as a community noticeboard.<br>It displays a list of Adult Ballet classes in Sydney.</p>
+	<p>The purpose of this website is to act as a community noticeboard.</p>
       </div>
     </div>
 
     <div class="section schedule">
       <h1 class="sectionTitle">Schedule</h1>
+      <div>
 	<p>by</p>
 	<select id="scheduleSelect">
 	  <option value="teacher">Teacher</option>
 	  <option value="day">Day</option>
 	</select>
-	<br>
-	<p class="currency">This schedule is correct as of 3pm Monday 31<sup>st</sup> Oct</p>
+      </div>
+      <br>
+      <p class="currency">This schedule is correct as of 3pm Monday 31<sup>st</sup> Oct</p>
     </div>
 
     <div class="bg bg2"></div>

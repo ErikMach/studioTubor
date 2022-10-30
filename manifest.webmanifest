@@ -1,0 +1,16 @@
+{
+  "background_color": "pink",
+  "description": "A community noticeboard for Adult Ballet classes in Sydney.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "./res/img/ABC_logo.png",
+      "sizes": "363x363",
+      "type": "image/png"
+    }
+  ],
+  "name": "ABC | Adult Ballet Community",
+  "short_name": "ABC",
+  "start_url": "./index.html",
+  "id": "/index.html"
+}
