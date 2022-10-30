@@ -1,5 +1,5 @@
 if (window.Notification) {
-  if (Notification.permission !== "granted" {
+  if (Notification.permission !== "granted") {
     Notification.requestPermission();
   }
 }
