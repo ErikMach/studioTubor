@@ -20,7 +20,7 @@ self.addEventListener("install", (event) => {
     ])
   );
 });
-let a = 0;
+
 self.addEventListener('fetch', (event) => {
   if (event.request.url.includes("js")) {
     // Network First
