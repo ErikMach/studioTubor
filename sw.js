@@ -20,8 +20,22 @@ self.addEventListener("install", (event) => {
     ])
   );
 });
-
-self.addEventListener('fetch', event=> {
-    let response = fetch(event.request);
-    event.respondWith(response);
+let a;
+self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes("js")) {
+    // Network First
+    event.respondWith(
+      fetch(event.request).catch(error => {
+        return caches.match(event.request) ;
+      })
+    )
+  } else {
+    // Cache First
+    event.respondWith(
+      caches.match(event.request).then(cachedResponse => {
+        // It can update the cache to serve updated content on the next request
+        return cachedResponse || fetch(event.request);
+      })
+    )
+  }
 });
