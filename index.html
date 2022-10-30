@@ -14,30 +14,30 @@
     <link rel="icon" type="ico" href="./res/img/ABC_icon.ico">
     <script src="./js/classSchedule.js"></script>
   </head>
-  <style>
-
-  </style>
   <body>
+
     <div class="bg bg1">
-      <div class="centre floatingPara">
+      <div class="centre floatingPara logoHolder">
 	<h1 class="logo"><span class="adult">ADULT</span><span class="ballet1">Ballet</span><span class="ballet">Ballet</span><br><span class="community">COMMUNITY</span></h1>
       </div>
-    </div>
-    <div class="section schedule">
-      <h1 class="sectionTitle">Schedule</h1>
-<!-- OPTION FOR DISPLAY BY TEACHER/DAYS
-	<p>by</p>
-	<select>
-	  <option>Teacher</option>
-	  <option>Day</option>
-	</select>
--->
-	<br>
-	<p class="currency">This schedule is correct as of 11pm Sunday 30<sup>th</sup> Oct</p>
-    </div>
-    <div class="bg bg2">
+      <div class="centre floatingPara textHolder">
+	<p>The purpose of this website is to act as a community noticeboard.<br>It displays a list of Adult Ballet classes in Sydney.</p>
+      </div>
     </div>
 
-<script src="./js/index.js"></script>
+    <div class="section schedule">
+      <h1 class="sectionTitle">Schedule</h1>
+	<p>by</p>
+	<select id="scheduleSelect">
+	  <option value="teacher">Teacher</option>
+	  <option value="day">Day</option>
+	</select>
+	<br>
+	<p class="currency">This schedule is correct as of 3pm Monday 31<sup>st</sup> Oct</p>
+    </div>
+
+    <div class="bg bg2"></div>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

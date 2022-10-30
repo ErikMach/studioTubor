@@ -27,25 +27,28 @@
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
-  background: transparent;
+  width: 0.8vw;
+  background: #00000000;
+  opacity: 0.3;
 }
 ::-webkit-scrollbar-button {
   display: none;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;//#f1f1f1;
+  background: #00000000;
   border-radius: 10px;
-  box-shadow: inset 0 0 5px gray; 
+  opacity: 0.3;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #aaa;
+  background-color: #9a877270;
+  opacity: 0.3;
   border-radius: 10px;
   margin: 2px;
   transition: all 0.3s;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #888;
+  opacity: 0.3;
 }
 
 html, body {
@@ -113,13 +116,24 @@ div.centre {
 }
 
 div.floatingPara {
-width: 300px;
-//  width: fit-content;
+  width: fit-content;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 0 5px 2px #aeaeae;
 }
 
+div.logoHolder {
+  width: 300px;
+}
+
+div.textHolder {
+  font-family: Lato;
+  max-width: 75%
+}
+
+div.textHolder > p {
+  margin: 1em 2em;
+}
 .bg {
   background-attachment: fixed;
   background-position: center;
@@ -137,6 +151,9 @@ width: 300px;
   min-height: 100%;
   width: 100%;
   background-image: url(../res/img/bg/ballet_1.jpg);
+
+  min-height: 170%;
+  justify-content: space-around;  
 }
 .bg2 {
   min-height: 100%;
@@ -144,8 +161,6 @@ width: 300px;
   margin: 0 auto;
   background-image: url(../res/img/bg/polunin_2.jpg);
   background-position: top;
-//  background-size: contain;
-//  background-color: #77776f;
 }
 
 .section {
@@ -179,7 +194,6 @@ div.section.schedule > select {
 }
 
 div.section.schedule > p.currency {
-//  position: absolute;
   align-self: right;
   right: 0;
   text-align: left;
@@ -210,7 +224,7 @@ table.schedule th.teacher {
   text-align: center;
   font-family: Lato;
   font-size: 2em;
-  background-color: hsl(0deg 100% 88%);
+  background-color: hsl(0deg 100% 88%); /* pink */
   color: white;
   text-shadow: 0 0 10px #9e4d5c;
 }
