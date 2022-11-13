@@ -22,7 +22,7 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.url.includes("js")) {
+  if (event.request.url.includes("js") || event.request.url.includes("index.html")) {
     // Network First
     event.respondWith(
       fetch(event.request).catch(error => {
