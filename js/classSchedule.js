@@ -1,33 +1,29 @@
 const schedule = {
-  "Fenella": [
-    { // Mondays
-      day: 1,
-      studio: "Dance102",
-      classType: "B/E",
+  "Julia": [
+    { // Thursdays
+      day: 4,
+      studio: "TBC",
+      classType: "First Steps Barre & Centre",
       cost: 25,
       time: {
-	start: 1000,
-	end: 1130
+	start: 1900,
+	end: 2000
       },
       dates: [
-	"31.10.22",
-	"07.11.22",
-	"14.11.22"
+	"19.01.23"
       ]
     },
     { // Thursdays
       day: 4,
-      studio: "Dance102",
-      classType: "First Steps Centre & Pointe",
+      studio: "TBC",
+      classType: "FS/B Pointe",
       cost: 25,
       time: {
-	start: 1900,
-	end: 2100
+	start: 2000,
+	end: 2045
       },
       dates: [
-	"03.11.22",
-	"10.11.22",
-	"17.11.22"
+	"19.01.23"
       ]
     }
   ],
@@ -42,24 +38,39 @@ const schedule = {
 	end: 2030
       },
       dates: [
-	"01.11.22",
-	"20.12.22"
+	"17.01.23",
+	"07.03.23"
       ]
     },
     { // Tuesdays
       day: 2,
       studio: "Dance102",
       classType: "Beginner Pointe",
-      cost: 15,
+      cost: 10,
       time: {
 	start: 2030,
 	end: 2100
       },
       dates: [
-	"01.11.22",
-	"20.12.22"
+	"17.01.23",
+	"07.03.23"
       ]
-    },
+    }
+  ],
+  "Cathie": [
+    { // Tuesdays
+      day: 2,
+      studio: "Dance102",
+      classType: "E",
+      cost: 25,
+      time: {
+	start: 1200,
+	end: 1330
+      },
+      dates: [
+	"17.01.23"
+      ]
+    }
   ],
   "Mitch": [
     { // Mondays
@@ -68,22 +79,15 @@ const schedule = {
       classType: "B/E",
       cost: 20,
       time: {
-	start: 1915,
-	end: 2045
+	start: 1830,
+	end: 2000
       },
       dates: [
-	"07.11.22",
-	"14.11.22",
-	"21.11.22",
-	"28.11.22",
-	"05.12.22",
-	"12.12.22",
-	"19.12.22",
-	"26.12.22"
+	"16.01.23"
       ]
     },
     { // Wednesdays
-      day:3,
+      day: 3,
       studio: "Dance102",
       classType: "B/E",
       cost: 20,
@@ -92,45 +96,24 @@ const schedule = {
 	end: 2000
       },
       dates: [
-	"02.11.22",
-	"09.11.22",
-	"16.11.22",
-	"23.11.22",
-	"30.11.22",
-	"07.12.22",
-	"14.12.22",
-	"21.12.22",
-	"28.12.22"
+	"16.01.23"
       ]
-    },
+    }
   ],
   "Fabio": [
     { // Saturdays
       day: 6,
-      studio: "Evolution",
-      classType: "B",
+      studio: "TBC",
+      classType: "B/I",
       cost: 22,
       time: {
-	start: 1130,
-	end: 1300
+	start: 1030,
+	end: 1200
       },
       dates: [
-	"05.11.22"
+	"21.01.23"
       ]
-    },
-    { // Saturdays
-      day: 6,
-      studio: "Evolution",
-      classType: "E/I",
-      cost: 22,
-      time: {
-	start: 1300,
-	end: 1430
-      },
-      dates: [
-	"19.11.22"
-      ]
-    },
+    }
   ],
   "Vadym": [
     { // Mondays
@@ -140,10 +123,10 @@ const schedule = {
       cost: 20,
       time: {
 	start: 1000,
-	end: 1130
+	end: 1100
       },
       dates: [
-	"01.11.22"
+	"16.01.23"
       ]
     },
     { // Tuesdays
@@ -156,7 +139,7 @@ const schedule = {
 	end: 1130
       },
       dates: [
-	"01.11.22"
+	"17.01.22"
       ]
     },
     { // Thursdays
@@ -169,7 +152,7 @@ const schedule = {
 	end: 1130
       },
       dates: [
-	"03.11.22"
+	"19.01.23"
       ]
     },
     { // Thursdays
@@ -182,35 +165,7 @@ const schedule = {
 	end: 1245
       },
       dates: [
-	"03.11.22"
-      ]
-    },
-  ],
-  "Elliot": [
-    { // Wednesdays
-      day: 3,
-      studio: "Evolution",
-      classType: "B/E",
-      cost: "25 (cash only)",
-      time: {
-	start: 1000,
-	end: 1130
-      },
-      dates: [
-	"16.11.22"
-      ]
-    },
-    { // Fridays
-      day: 5,
-      studio: "Evolution",
-      classType: "B",
-      cost: "25 (cash only)",
-      time: {
-	start: 1830,
-	end: 2000
-      },
-      dates: [
-	"11.11.22"
+	"19.01.23"
       ]
     }
   ]
@@ -231,6 +186,9 @@ const studios = {
     address: "6/7 Herbert St, St Leonards",
     mapLink: "https://goo.gl/maps/BDUu8bPE9VRmATW9A",
     phone: "(02) 9436 4599"
+  },
+  "TBC": {
+    address: "Location not yet confirmed."
   }
 };
 
