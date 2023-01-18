@@ -146,9 +146,10 @@ const createScheduleDay = () => {
         ]);
         table.appendChild(subTitleRow);
       }
+
       const infoRow = c("tr", {class: i===scheduleDay[day].length-1 ? "newSet" : ""}, [
 	c("td", {class: "time", textContent: writeTimeRange(classe.time)}),
-	c("td", {class: "studio", innerHTML: `<a href="${studios[classe.studio].mapLink}" target="_blank">${classe.studio}</a>`, title: studios[classe.studio].address}),
+	c("td", {class: "studio", innerHTML: (classe.studio === "TBC") ? `<strong>TBC</strong>` : `<a href="${studios[classe.studio].mapLink}" target="_blank">${classe.studio}</a>`, title: studios[classe.studio].address}),
 	c("td", {class: "level", textContent: classe.classType}),
 	c("td", {class: "cost", textContent: "$" + classe.cost}),
       ]);
@@ -185,7 +186,7 @@ const createScheduleTeacher = () => {
       }
       const infoRow = c("tr", {class: i===classes.length-1 ? "newSet" : ""}, [
 	c("td", {class: "time", textContent: writeTimeRange(classe.time)}),
-	c("td", {class: "studio", innerHTML: `<a href="${studios[classe.studio].mapLink}" target="_blank">${classe.studio}</a>`, title: studios[classe.studio].address}),
+	c("td", {class: "studio", innerHTML: (classe.studio === "TBC") ? `<strong>TBC</strong>` : `<a href="${studios[classe.studio].mapLink}" target="_blank">${classe.studio}</a>`, title: studios[classe.studio].address}),
 	c("td", {class: "level", textContent: classe.classType}),
 	c("td", {class: "cost", textContent: "$" + classe.cost}),
       ]);
